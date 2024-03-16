@@ -4,6 +4,7 @@ import Layout from "./view/Layout.jsx";
 import Home from "./view/Home.jsx";
 import About from "./view/About.jsx";
 import Inspiration from "./view/Inspiration.jsx";
+import 'bootstrap/dist/js/bootstrap.min.js'
 
 function App() {
 
