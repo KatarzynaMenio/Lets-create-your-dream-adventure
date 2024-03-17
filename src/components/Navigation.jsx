@@ -1,9 +1,10 @@
 import {Link} from "react-router-dom";
+import logo from '../assets/Logo/logo.png'
 
 export default function Navigation() {
-    return (<nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    return (<nav className="navbar navbar-expand-lg bg-dark navi-bar" data-bs-theme="dark">
         <div className="container navi">
-            <a className="navbar-brand" href="#">LOGO</a>
+            <a className="navbar-brand pt-0 pb-0" href="/"><img src={logo} height={"60"}  alt="logo"/></a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
                     aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
