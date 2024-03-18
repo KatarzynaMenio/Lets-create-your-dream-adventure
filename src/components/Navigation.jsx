@@ -26,9 +26,9 @@ export default function Navigation() {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="#footer">
+                        <a className="nav-link" href="#footer">
                             Kontakt
-                        </Link>
+                        </a>
                     </li>
                 </ul>
             </div>
