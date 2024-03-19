@@ -9,9 +9,9 @@ import Arrow from "./Arrow.jsx";
 
 export default function LandingPage () {
     return (
-        <div className="landing-page-container container-rwd">
+        <div className="landing-page-container">
             <Carousel className="carousel-properties">
-                <Carousel.Item className="item-properties">
+                <Carousel.Item>
                     <img src={monumentValley} alt="monument_valley" className="img-properties"/>
                 </Carousel.Item>
                 <Carousel.Item>
