@@ -1,0 +1,7 @@
+$max-width: 1200px;
+
+@mixin notebook {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
