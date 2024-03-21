@@ -1,0 +1,161 @@
+@use "bootswatch/dist/lux/variables" as v;
+@use "../variables/Colors" as c;
+@import "../modules/Mixins";
+
+.form-header {
+  text-align: center;
+  padding-bottom: 50px;
+  color: v.$primary;
+}
+
+.paragraph-section {
+  padding-bottom: 50px;
+
+  .paragraph {
+    text-align: justify;
+    font-size: 20px;
+    color: v.$primary;
+    font-weight: 300;
+  }
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: c.$palette-beige;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 20px;
+  border: 3px solid v.$primary;
+  color: c.$text-form;
+
+  @include notebook {
+    padding: 30px;
+  }
+
+  .checkbox-style {
+    font-size: 18px;
+
+    [type="checkbox"] {
+      border: 1px solid c.$text-form;
+      border-radius: 30%;
+    }
+  }
+}
+
+.select-element-style {
+  display: flex;
+  flex-direction: row;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  .select-element {
+    max-width: 50%;
+    align-self: flex-start;
+
+    @include mobile {
+      max-width: 100%;
+      align-self: center;
+    }
+  }
+
+  .state-choice {
+    display: flex;
+    flex-direction: column;
+
+    .choice-header {
+      text-align: center;
+    }
+
+    .choice-container {
+      width: 100%;
+      height: 100px;
+      background-color: v.$gray-200;
+      overflow-y: auto;
+
+      @include mobile {
+        max-width: 100%;
+        align-self: center;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+.data-picker-element {
+  display: flex;
+  flex-grow: initial;
+
+  @include mobile {
+    display: block;
+  }
+
+  .data-picker-style {
+    display: flex;
+    @include mobile {
+      display: block;
+      width: 75%;
+    }
+
+    @include mobile-xs {
+      display: block;
+    }
+  }
+
+  .trip-duration {
+    margin-left: 20px;
+    font-size: 18px;
+
+    @include mobile {
+      display: flex;
+      margin-left: 0;
+      margin-top: 10px;
+    }
+
+    .trip-duration-style {
+      font-weight: 700;
+      width: fit-content;
+
+      @include mobile {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+.paragraph-form-style {
+  text-align: justify;
+  font-size: 18px;
+  color: c.$text-form
+}
+
+.textarea-style .fom-control{
+  font-size: 18px;
+  color: c.$text-form
+}
+
+.submit-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .button-style {
+    letter-spacing: 5px;
+    font-weight: 700;
+
+    @include mobile {
+      margin-top: 20px;
+    }
+  }
+}
+
