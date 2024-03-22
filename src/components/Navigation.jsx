@@ -12,9 +12,9 @@ export default function Navigation() {
             <div className="collapse navbar-collapse navbar-right-align" id="navbarColor02">
                 <ul className="navbar-nav me-auto">
                     <li className="nav-item">
-                        <Link className="nav-link" to="/">Strona główna
+                        <a className="nav-link" href="/#form-section">Formularz podróżnika
                             <span className="visually-hidden">(current)</span>
-                        </Link>
+                        </a>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/about">O mnie
