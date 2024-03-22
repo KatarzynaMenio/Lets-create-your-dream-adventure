@@ -1,0 +1,21 @@
+@use "bootswatch/dist/lux/variables" as v;
+@use "../variables/Colors" as c;
+@import "../modules/Mixins";
+
+.what-you-get-section {
+  margin-top: 70px;
+  margin-bottom: 40px;
+
+  .item-header {
+    text-align: center;
+    padding-bottom: 50px;
+    color: v.$primary;
+  }
+
+  .item {
+    text-align: justify;
+    font-size: 20px;
+    color: v.$primary;
+    font-weight: 300;
+  }
+}
