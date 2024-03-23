@@ -1,9 +1,16 @@
 $max-width-notebook: 1200px;
+$max-width-laptop: 992px;
 $max-width-mobile: 768px;
 $max-width-mobile-xs: 480px;
 
 @mixin notebook {
   @media (max-width: $max-width-notebook) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: $max-width-laptop) {
     @content;
   }
 }
