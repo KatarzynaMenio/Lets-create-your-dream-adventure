@@ -6,8 +6,35 @@ import TripDatePicker from "./TripDatePicker.jsx";
 import Preferences from "./Preferences.jsx";
 import PersonalData from "./PersonalData.jsx";
 import {Button} from "react-bootstrap";
+import supabase from "../configuration/supabaseClient.js";
+import {useEffect} from "react";
 
 export default function Form () {
+
+    useEffect(() => {
+        supabase
+            .from('USA_STATE')
+            .select('*')
+            .then((response) => {
+                if (response.error) {
+                    throw new Error("Unable to get USA_REGION data " + response.error)
+                }
+                console.log(response)
+            })
+    }, []);
+
+    useEffect(() => {
+        supabase
+            .from('USA_REGION')
+            .select('*')
+            .then((response) => {
+                if (response.error) {
+                    throw new Error("Unable to get USA_REGION data " + response.error)
+                }
+                console.log(response)
+            })
+    }, []);
+
     return (
         <FormBootstrap className="form-container">
             <div className="col-12 col-xl-10 justify-content-start">
