@@ -7,9 +7,16 @@ import Preferences from "./Preferences.jsx";
 import PersonalData from "./PersonalData.jsx";
 import {Button} from "react-bootstrap";
 import supabase from "../configuration/supabaseClient.js";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
-export default function Form () {
+export default function Form() {
+
+    //dane z supabase
+    const [stateList, setStateList] = useState([]);
+    const [regionList, setRegionList] = useState([]);
+
+    //sekcja wybierz obszar CheckboxArea
+    const [checkboxRegionList, setCheckboxRegionList] = useState([]);
 
     useEffect(() => {
         supabase
@@ -17,9 +24,9 @@ export default function Form () {
             .select('*')
             .then((response) => {
                 if (response.error) {
-                    throw new Error("Unable to get USA_REGION data " + response.error)
+                    throw new Error("Unable to get USA_STATE data " + response.error)
                 }
-                console.log(response)
+                setStateList(response.data)
             })
     }, []);
 
@@ -31,7 +38,7 @@ export default function Form () {
                 if (response.error) {
                     throw new Error("Unable to get USA_REGION data " + response.error)
                 }
-                console.log(response)
+                setRegionList(response.data)
             })
     }, []);
 
@@ -39,15 +46,15 @@ export default function Form () {
         <FormBootstrap className="form-container">
             <div className="col-12 col-xl-10 justify-content-start">
                 <h3>Wybierz obszar:</h3><br/>
-                <CheckboxArea/><br/>
+                <CheckboxArea regionList={regionList} setRegionList={setRegionList} setCheckboxRegionList={setCheckboxRegionList} checkboxRegionList={checkboxRegionList}/><br/>
                 <h3>Wybierz Stany USA:</h3><br/>
                 <StateSelect/><br/>
                 <h3>Wybierz preferowany sposób poruszania się między stanami:</h3><br/>
                 <CheckboxTransport/><br/>
                 <h3>Wybierz datę podróży:</h3><br/>
-                <TripDatePicker /><br/>
+                <TripDatePicker/><br/>
                 <h3>Opisz swoje preferencje:</h3><br/>
-                <Preferences /><br/>
+                <Preferences/><br/>
                 <h3>Wypełnij swoje dane:</h3><br/>
                 <PersonalData/>
                 <div className="submit-element">
